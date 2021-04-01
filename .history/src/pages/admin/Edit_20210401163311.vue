@@ -16,19 +16,10 @@ import productForm from '@/components/products/ProductFrom.vue';
 
 export default {
 created() {
-  const { name } = this.model;
-  if(!name){
-    this.$store.dispatch('productById',{
-      prodictId: this.$route.params['id']
-    }); 
-  }
-  if(this.manufacturers.length === 0){
-    this.$store.dispatch('allManufactuers');
-  }
+  
 },
-
 components:{
   'product-from':ProductForm
-  }    
+}    
 }
 </script>

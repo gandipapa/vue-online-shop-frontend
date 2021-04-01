@@ -20,7 +20,7 @@ created() {
   if(!name){
     this.$store.dispatch('productById',{
       prodictId: this.$route.params['id']
-    }); 
+    });
   }
   if(this.manufacturers.length === 0){
     this.$store.dispatch('allManufactuers');
@@ -29,6 +29,6 @@ created() {
 
 components:{
   'product-from':ProductForm
-  }    
+}    
 }
 </script>

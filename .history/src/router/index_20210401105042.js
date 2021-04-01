@@ -41,11 +41,6 @@ export default new Router({
           name:'Edit',
           component:Edit,
         },
-        {
-          path: 'manufacturers',
-          name: 'Manufacturers',
-          component: Manufacturers,
-        }
       ]
     },
     {

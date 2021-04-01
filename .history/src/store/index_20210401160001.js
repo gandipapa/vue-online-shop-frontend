@@ -3,7 +3,6 @@ import Vuex from 'vuex';
 import axios from 'axios';
 import { productMutations, cartMutations, manufacturerMutations } from './mutations';
 import { productGetters, manufacturerGetters } from './getters';
-import { productGetters, manufacturerGetters } from './actions';
 const API_BASE = 'http://localhost:3000/api/v1';
 
 Vue.use(Vuex);
