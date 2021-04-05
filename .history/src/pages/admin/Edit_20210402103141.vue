@@ -3,16 +3,16 @@
     <div class="title">
       <h1>This is Admin/Edit/</h1>
     </div>
-    <product-form 
+    <product-from 
     @save-product="updateProduct"
     :model="model"
     :manufacturers="manufacturers"
     :isEditing="true"
-    ></product-form>
+    ></product-from>
   </div>
 </template>
 <script>
-import ProductForm from '@/components/products/ProductForm.vue';
+import productForm from '@/components/products/ProductFrom.vue';
 
 export default {
 created() {
@@ -35,16 +35,11 @@ computed: {
     //这里返回product 的拷贝，是为了在修改product的拷贝之后再保存钱不修改本地的vuex store product
     return {...product, manufacturer: { ...product.manufacturer} };
   }
- },
- methonds: {
-   updateProduct(product) {
-     this.$store.dispatch('updateProduct', {
-       product,
-     })
-   }
- },
- components:{
-  'product-form':ProductForm
+ }
+,
+
+components:{
+  'product-from':ProductForm
   }    
 }
 </script>

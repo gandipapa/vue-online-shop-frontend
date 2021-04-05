@@ -23,15 +23,29 @@ export default {
             return {};
         }
     },
+    data(){
+        return{
+            model:{},
+            manufacturers:[
+                {
+                    _id:'sam',
+                    name:'Samsung',
+                },
+                {
+                    _id:'apple',
+                    name:'Apple',
+                },
+            ]
+        }
+    },
     methods:{
         addProduct(model) {
-            this.$store.dispatch('addProduct',{
-                product: model,
-            })
+            console.log('model',model);
         },
     },
     components:{
         'product-form': ProductForm
     }
+    
 }
 </script>

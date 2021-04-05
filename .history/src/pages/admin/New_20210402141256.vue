@@ -1,10 +1,10 @@
 <template>
-    <product-form 
+    <product-from 
         @save-product = "addProduct"
         :model="model"
         :manufacturers="manufacturers"
     >
-    </product-form>
+    </product-from>
 </template>
 <script>
 
@@ -31,7 +31,7 @@ export default {
         },
     },
     components:{
-        'product-form': ProductForm
+        'product-from': ProductForm
     }
 }
 </script>

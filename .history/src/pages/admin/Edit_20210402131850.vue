@@ -3,16 +3,16 @@
     <div class="title">
       <h1>This is Admin/Edit/</h1>
     </div>
-    <product-form 
+    <product-from 
     @save-product="updateProduct"
     :model="model"
     :manufacturers="manufacturers"
     :isEditing="true"
-    ></product-form>
+    ></product-from>
   </div>
 </template>
 <script>
-import ProductForm from '@/components/products/ProductForm.vue';
+import ProductForm from '@/components/products/ProductFrom.vue';
 
 export default {
 created() {
@@ -44,7 +44,7 @@ computed: {
    }
  },
  components:{
-  'product-form':ProductForm
+  'product-from':ProductForm
   }    
 }
 </script>

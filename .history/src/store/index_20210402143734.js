@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-//import axios from 'axios';
+import axios from 'axios';
 import { productMutations, cartMutations, manufacturerMutations } from './mutations';
 import { productGetters, manufacturerGetters } from './getters';
 import { productActions, manufacturerActions } from './actions';
-// const API_BASE = 'http://localhost:3000/api/v1';
+const API_BASE = 'http://localhost:3000/api/v1';
 
 Vue.use(Vuex);
 
@@ -33,8 +33,7 @@ export default new Vuex.Store({
   }
   ,
   actions: {
-   ...productActions,
-   ...manufacturerActions,
+
   }
 });
 

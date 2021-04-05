@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-//import axios from 'axios';
+import axios from 'axios';
 import { productMutations, cartMutations, manufacturerMutations } from './mutations';
 import { productGetters, manufacturerGetters } from './getters';
 import { productActions, manufacturerActions } from './actions';

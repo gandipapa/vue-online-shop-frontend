@@ -33,5 +33,6 @@ export default {
     components:{
         'product-form': ProductForm
     }
+    
 }
 </script>

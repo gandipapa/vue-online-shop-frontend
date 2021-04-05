@@ -30,13 +30,7 @@ export const productMutations = {
         state.showLoader = true;
     },
     UPDATE_PRODUCT_SUCCESS(state, payload) {
-        state.showLoader = false;
-
-        const { product: newProduct } = payload;
-        state.product = newProduct;
-        state.products = state.prodcts.map
-
-
+        
     }
   };
   
