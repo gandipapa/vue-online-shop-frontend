@@ -21,6 +21,10 @@ export default new Vuex.Store({
     products: [],
     // all manufacturers
     manufacturers: [],
+    // selected manufacturer
+    manufacturer: {},
+    // userInfo
+    user: {}
   },
   mutations: {
     ...productMutations,

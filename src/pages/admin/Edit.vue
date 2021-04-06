@@ -19,11 +19,11 @@ created() {
   const { name } = this.model;
   if(!name){
     this.$store.dispatch('productById',{
-      prodictId: this.$route.params['id']
+      productId: this.$route.params['id']
     }); 
   }
   if(this.manufacturers.length === 0){
-    this.$store.dispatch('allManufactuers');
+    this.$store.dispatch('allManufacturers');
   }
 },
 computed: {
@@ -31,15 +31,15 @@ computed: {
     return this.$store.getters.allManufacturers;
   },
   model(){
-    const product = this.$store.getters.prodictId(this.$route.params['id']);
+    const product = this.$store.getters.productById(this.$route.params['id']);
     //这里返回product 的拷贝，是为了在修改product的拷贝之后再保存钱不修改本地的vuex store product
     return {...product, manufacturer: { ...product.manufacturer} };
   }
  },
- methonds: {
+ methods: {
    updateProduct(product) {
-     this.$store.dispatch('updateProduct', {
-       product,
+     this.$store.dispatch("updateProduct", {
+        product,
      })
    }
  },

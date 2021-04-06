@@ -76,4 +76,31 @@ export const manufacturerActions = {
       });
     })
   },
+  manufacturerById({ commit }, payload) {
+    commit('MANUFACTURER_BY_ID');
+
+    const { manufacturerId } = payload;
+    axios.get(`${API_BASE}/manufacturers/${manufacturerId}`).then(response => {
+      commit('MANUFACTURER_BY_ID_SUCCESS', {
+        manufacturer: response.data,
+      });
+    })
+  },
+  addManufacturer({ commit, state }, payload) {
+    commit('ADD_MANUFACTURER');
+    const { manufacturer } = payload;
+    const _id = state.user._id;
+
+    axios
+      .post(`${API_BASE}/manufacturers`, { ...manufacturer, user: _id })
+      .then(response => {
+        commit('ADD_MANUFACTURER_SUCCESS', {
+          manufacturer: response.data
+        });
+
+      })
+      .catch(() => {
+        Message.error("不好意思，制造商添加失败！");
+      });
+  }
 }

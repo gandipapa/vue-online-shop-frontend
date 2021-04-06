@@ -34,9 +34,21 @@ export const productMutations = {
 
         const { product: newProduct } = payload;
         state.product = newProduct;
-        state.products = state.prodcts.map
+        state.products = state.products.map(product => { 
+          if ( product._id === newProduct._id) {
+            return newProduct;
+          }
+          return product;
+        })
+    },
+    ADD_PRODUCT(state) {
+      state.showLoader = true;
+    },
+    ADD_PRODUCT_SUCCESS(state, payload) {
+      state.showLoader = false;
 
-
+      const { product }  = payload;
+      state.products = state.products.concat(product);
     }
   };
   
@@ -47,7 +59,7 @@ export const productMutations = {
     },
     REMOVE_FROM_CART(state, payload) {
       const { productId } = payload
-      state.cart = state.cart.filter(product => product._id !== productId)
+      state.cart = state.cart.filter(product => product._id !== productId);
     },
   }
   
@@ -55,6 +67,40 @@ export const productMutations = {
     ALL_MANUFACTURERS(state) {
       state.showLoader = true;
     },
+    MANUFACTURER_BY_ID(state) {
+      state.showLoader = true;
+    },
+    MANUFACTURER_BY_ID_SUCCESS(state, payload) {
+      state.showLoader = false;
+  
+      const { manufacturer } = payload;
+      state.manufacturer = manufacturer;
+    },
+  UPDATE_MANUFACTURER(state) {
+    state.showLoader = true;
+  },
+  UPDATE_MANUFACTURER_SUCCESS(state, payload) {
+    state.showLoader = false;
+
+    const { manufacturer: newManufacturer } = payload;
+    state.manufacturers = state.manufacturers.map(manufacturer => {
+      if (manufacturer._id === newManufacturer._id) {
+        return newManufacturer;
+      }
+      return manufacturer;
+    });
+
+    state.manufacturer = newManufacturer;
+  },
+  ADD_MANUFACTURER(state) {
+    state.showLoader = true;
+  },
+  ADD_MANUFACTURER_SUCCESS(state, payload) {
+    state.showLoader = false;
+
+    const { manufacturer } = payload;
+    state.manufacturers = state.manufacturers.concat(manufacturer);
+  },
     ALL_MANUFACTURERS_SUCCESS(state, payload) {
       const { manufacturers } = payload;
   
