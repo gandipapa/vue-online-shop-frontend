@@ -4,22 +4,15 @@
       <div class="container">
         This is ProductList
       </div>
-      <template v-for="product in products">
-        <product-item :product="product" :key="product._id"></product-item>
-      </template>
+      <!-- <template v-for="product in products"> -->
+        <product-item :products="products" ></product-item>
+      <!-- </template> -->
     </div>
   </div>
 </template>
 
 <style>
-.product {
-  border-bottom: 1px solid black;
-}
 
-.product__image {
-  width: 100px;
-  height: 100px;
-}
 </style>
 
 <script>
@@ -39,13 +32,13 @@ export default {
       return this.$store.getters.allProducts;
     }
   },
-  methods: {
-    addToCart(product) {
-      this.$store.commit('ADD_TO_CART', {
-        product
-      });
-    }
-  },
+  // methods: {
+  //   addToCart(product) {
+  //     this.$store.commit('ADD_TO_CART', {
+  //       product
+  //     });
+  //   }
+  // },
   components: { 
     'product-item':ProductItem 
     }
